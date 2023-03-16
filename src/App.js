@@ -21,10 +21,10 @@ function App() {
   return (
     <div className="app">
 
-      <h1>Game Play Blazing</h1>
+      <h1>GameLand</h1>
 
       <div className="search">
-        <input placeholder={`Search ${games.length} games`} />
+        <input />
         <img src={SearchIcon} alt="search" />
       </div>
 
