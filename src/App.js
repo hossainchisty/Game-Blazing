@@ -1,7 +1,9 @@
+
 import { useEffect, useState } from "react";
+import SearchIcon from "./assets/search.svg";
+import "./assets/style/App.css";
 import GameCard from "./components/GameCard";
-import SearchIcon from "./search.svg";
-import "./style/App.css";
+
 
 function App() {
   const [games, setGames] = useState("");
@@ -16,20 +18,17 @@ function App() {
   useEffect(() => {
     fetchGame();
   }, []);
-  return <div className="app">
+  return (
+    <div className="app">
+
       <h1>Game Play Blazing</h1>
 
       <div className="search">
-        <input
-          placeholder={`Search ${games.length} games`}
-        />
-        <img
-          src={SearchIcon}
-          alt="search"
-        />
+        <input placeholder={`Search ${games.length} games`} />
+        <img src={SearchIcon} alt="search" />
       </div>
-    
-       {games?.length > 0 ? (
+
+      {games?.length > 0 ? (
         <div className="container">
           {games.map((game) => (
             <GameCard game={game} />
@@ -40,7 +39,8 @@ function App() {
           <h2>No games found</h2>
         </div>
       )}
-  </div>;
+    </div>
+  );
 }
 
 export default App;
